@@ -18,6 +18,7 @@
     background-color: var(--secondary-color);
     border-radius: var(--br-2xl);
     padding: 1rem;
+    font-size: 20px;
 }
 
 .todoCheckbox {

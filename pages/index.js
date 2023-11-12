@@ -10,37 +10,43 @@ const Home = () => {
 
 
     return (
-        <div className={styles.container}>
-            <div className={styles.actionsContainer}>
-                {initialized ? (
-                    <div className={styles.todoInput}>
-                        <div className={`${styles.todoCheckbox} ${styles.checked}`} />
-                        <div className={styles.inputContainer}>
-                            <form onSubmit={addTodo}>
-                                <input value = {input} onChange={handleChange} id={styles.inputField} type="text" placeholder='Create a new todo...' />
-                            </form>
-                        </div>
-                        <div className={styles.iconContainer}>
-       
-                        </div>
-                    </div>
-                ) : (
-                    <button type="button" className={styles.button} onClick={() => initializeUser()} disabled={transactionPending}>
-                        Initialize
-                    </button>
-                )}
+        <div>
+            <div className={styles.header}>
+                <h1 className={styles.title}>Solana Todo App</h1>
                 <WalletMultiButton/>
-                {/* <WalletModalButton></WalletModalButton> */}
             </div>
+            <div className={styles.container}>
+                <div className={styles.actionsContainer}>
+                    {initialized ? (
+                        <div className={styles.todoInput}>
+                            <div className={`${styles.todoCheckbox} ${styles.checked}`} />
+                            <div className={styles.inputContainer}>
+                                <form onSubmit={addTodo}>
+                                    <input value = {input} onChange={handleChange} id={styles.inputField} type="text" placeholder='Create a new todo...' />
+                                </form>
+                            </div>
+                            <div className={styles.iconContainer}>
+        
+                            </div>
+                        </div>
+                    ) : (
+                        <button type="button" className={styles.button} onClick={() => initializeUser()} disabled={transactionPending}>
+                            Initialize
+                        </button>
+                    )}
+                    {/* <WalletModalButton></WalletModalButton> */}
+                </div>
 
-            <div className={styles.mainContainer}>
-                <Loading loading={loading}>
-                    <TodoSection title="Tasks" todos={incompleteTodos} action={markTodo} />
+                <div className={styles.mainContainer}>
+                    <Loading loading={loading}>
+                        <TodoSection title="Tasks" todos={incompleteTodos} action={markTodo} />
 
-                    <TodoSection title="Completed" todos={completedTodos} action={removeTodo} />
-                </Loading>
+                        <TodoSection title="Completed" todos={completedTodos} action={removeTodo} />
+                    </Loading>
+                </div>
             </div>
         </div>
+        
     )
 }
 
