@@ -20,7 +20,8 @@
         "next": "^12.3.4",
         "react": "^17.0.0 || ^18.0.0",
         "react-dom": "18.2.0",
-        "react-hot-toast": "^2.3.0"
+        "react-hot-toast": "^2.3.0",
+        "yarn": "^1.22.19"
     },
     "devDependencies": {
         "eslint": "8.19.0",
